@@ -29,10 +29,12 @@
     color: red;
     font-weight: normal;
   }
+
   </style>
+  </head>
   <body>
     <div class="container w-50 mt-5">
-        <form id="formulario" action="/index2.php" method="get">
+        <form id="formulario" action="index2.php" method="get">
            <div class="mb-3">
         <label for="nombre" class="form-label">Nombre:</label>
         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Introduzca su nombre">
@@ -58,8 +60,11 @@
         <input type="email" id="correo" name="correo" class="form-control" placeholder="Introduce un correo">
         <div id="emailInfo" class="form-text text-danger"></div>
       </div>
-      </div>
+      <div style="text-align:center;" class="mb-7">
       <button type="submit" class="btn btn-primary">Validar</button>
+      </div>
+      </div>
+      
     </form>
   </div> 
     </div>
@@ -68,6 +73,4 @@
 
     <script src="../scripts/validacion.js"></script>
   </body>
-</head>
-
 </html>

@@ -7,7 +7,7 @@ $(document).ready(function () {
     const email = $(this).val().trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (email !== '' && !emailRegex.test(email)) {
+    if (!emailRegex.test(email) && email !== '') {
       $('#emailInfo').text('Correo no válido.');
     } else {
       $('#emailInfo').text('');
@@ -49,8 +49,13 @@ $(document).ready(function () {
 
     $('#length').toggleClass('valid', tiene8Numeros).toggleClass('invalid', !tiene8Numeros);
     $('#letter').toggleClass('valid', tieneLetra).toggleClass('invalid', !tieneLetra);
+
+    if (tiene8Numeros && tieneLetra) {
+      $('#dniInfo').text('');
+    }
   });
 
+  // Validación al enviar el formulario
   $('#formulario').submit(function (e) {
     let valid = true;
 
@@ -93,6 +98,7 @@ $(document).ready(function () {
       $('#emailInfo').text('');
     }
 
+    // Si hay errores, se bloquea el envío
     if (!valid) {
       e.preventDefault();
     }
