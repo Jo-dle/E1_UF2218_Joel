@@ -34,7 +34,7 @@
   </head>
   <body>
     <div class="container w-50 mt-5">
-        <form id="formulario" action="index2.php" method="get">
+        <form id="formulario" action="../controladores/validaciondb.php" method="get">
            <div class="mb-3">
         <label for="nombre" class="form-label">Nombre:</label>
         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Introduzca su nombre">

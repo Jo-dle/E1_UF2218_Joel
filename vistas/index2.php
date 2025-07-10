@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <title>Instancia</title>
@@ -8,49 +7,47 @@
   <style>
     body {
       padding: 40px;
-      background-color: #f8f9fa; /* opcional para resaltar */
+      background-color: #f8f9fa;
     }
-
     h2 {
       text-align: center;
       margin-bottom: 30px;
     }
-
     .strong {
       font-weight: bold;
       margin-top: 20px;
     }
-
     .border-container {
-      border: 2px solid #333; /* color del borde */
+      border: 2px solid #333;
       padding: 20px;
       border-radius: 8px;
-      background-color: white; /* para que contraste con el fondo */
-      max-width: 800px; /* opcional, para que no sea tan ancho */
-      margin: 0 auto; /* centra horizontalmente */
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* opcional, para efecto */
+      background-color: white;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 
 <body>
 
+<?php
+// Recoger variables de GET y sanitizarlas para mostrar
+$nombre = isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : '';
+$apellido = isset($_GET['apellido']) ? htmlspecialchars($_GET['apellido']) : '';
+$DNIinsertado = isset($_GET['dni']) ? htmlspecialchars($_GET['dni']) : '';
+$correo = isset($_GET['correo']) ? htmlspecialchars($_GET['correo']) : '';
+?>
+
   <div class="border-container">
     <h2>Instancia</h2>
 
-    <!-- Mostrar la fecha actual -->
     <p class="text-end">Fecha: <?php echo date('d/m/Y'); ?></p>
 
-    <?php
-      // Recoger los datos del formulario enviados por GET
-      $nombre = htmlspecialchars($_GET['nombre'] ?? '');
-      $apellido = htmlspecialchars($_GET['apellido'] ?? '');
-      $dni = htmlspecialchars($_GET['dni'] ?? '');
-      $correo = htmlspecialchars($_GET['correo'] ?? '');
-    ?>
-
     <div class="strong">
-      <?php echo "$nombre $apellido"; ?> con DNI <?php echo $dni; ?> y correo electrónico <?php echo $correo; ?>
+      <?php 
+        echo "$nombre $apellido DNI $DNIinsertado y correo electrónico $correo"; 
+      ?>
     </div>
 
     <form class="mt-4">
@@ -69,5 +66,4 @@
   </div>
 
 </body>
-
 </html>
