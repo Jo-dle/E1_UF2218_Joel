@@ -6,5 +6,7 @@ Debemos crear un formulario con varios campos que deberán estar validados con j
 
 Además una vez validades crearemos una página que refleje estos datos con una estructura específica.
 
-##Objetivos opcionales
+## Objetivos opcionales
+
+Añadir un paso intermedio a la hora de enviar los datos del index al index2 pasando por una página de confirmación con una base de datos
 
